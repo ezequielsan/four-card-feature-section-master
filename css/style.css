@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-red: hsl(0, 78%, 62%);
+  --color-cyan: hsl(180, 62%, 55%);
+  --color-orange: hsl(34, 97%, 64%);
+  --color-blue: hsl(212, 86%, 64%);
+
+  --color-very-dark-blue: hsl(234, 12%, 34%);
+  --color-grayish-blue: hsl(229, 6%, 66%);
+  --color-very-light-gray: hsl(0, 0%, 98%);
+
+  --font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-size: 1.875rem; /* 30px */
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 1rem; /* 16px */
+  margin-bottom: 5px;
+}
+
+h1,
+h2 {
+  color: var(--color-very-dark-blue);
+}
+
+p {
+  font-size: 0.9375rem; /* 15px */
+  color: var(--color-grayish-blue);
+  font-weight: 200;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 80%;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  max-width: 500px;
+  margin: 3rem auto 2rem auto;
+  text-align: center;
+}
+
+.header h1:first-of-type {
+  font-weight: 200;
+}
+
+.header h1:last-of-type {
+  font-weight: 600;
+}
+
+.header p {
+  margin-top: 0.5rem;
+}
+
+/* CONTENT */
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  max-width: 330px;
+  /* min-width: 250px; */
+  box-shadow: 4px 4px 15px 0px rgba(44, 44, 44, 0.15);
+  padding: 23px 27px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.card p {
+  font-size: 0.87rem; /* 14px */
+}
+
+.card img {
+  max-width: 50px;
+  margin-top: 2rem;
+  text-align: center;
+  align-self: flex-end;
+}
+
+.supervisor {
+  border-top: 4px solid var(--color-cyan);
+}
+
+.team-builder {
+  border-top: 4px solid var(--color-red);
+}
+
+.karma {
+  border-top: 4px solid var(--color-orange);
+  grid-column: 2;
+}
+
+.calculator {
+  border-top: 4px solid var(--color-blue);
+}
+
+.supervisor,
+.calculator {
+  grid-row: span 2;
+  align-self: center;
+}
+
+/* FOOTER */
+.footer {
+  margin: 2rem 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .supervisor,
+  .calculator {
+    grid-row: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    margin-bottom: 4rem;
+  }
+  .content {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+
+  .card img {
+    max-width: 45px;
+  }
+  .karma {
+    grid-column: 1;
+  }
+
+  .calculator {
+    grid-row: auto;
+  }
+}
